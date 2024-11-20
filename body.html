@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery with GIF Background</title>
+  <style>
+    /* Reset styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling with GIF background */
+    body {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: url('6.gif') center/cover no-repeat; /* Use your own GIF URL here */
+      background-attachment: fixed;
+    }
+
+    /* Overlay to darken GIF for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6); /* Adjust darkness as needed */
+      z-index: -1;
+    }
+
+    /* Title styling */
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1.5s ease-in-out;
+      text-align: center;
+    }
+
+    /* Gallery container styling */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+      z-index: 1; /* Ensures content is above the background overlay */
+    }
+
+    /* Individual gallery item styling */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    /* Zoom effect on hover */
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Image styling */
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    /* Overlay with description */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: 10px;
+    }
+
+    /* Show overlay on hover */
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Fade-in animation \*/
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Photos</h1>
+  <div class="gallery">
+    <!-- Gallery Item 1 -->
+    <div class="gallery-item">
+      <img src="1.gif" alt="Image 1">
+      <div class="overlay">ANIME</div>
+    </div>
+    <!-- Gallery Item 2 -->
+    <div class="gallery-item">
+      <img src="2.gif" alt="Image 2">
+      <div class="overlay">Lexter Coros</div>
+    </div>
+    <!-- Gallery Item 3 -->
+    <div class="gallery-item">
+      <img src="3.gif" alt="Image 3">
+      <div class="overlay">Sandy Negad</div>
+    </div>
+    <!-- Gallery Item 4 -->
+    <div class="gallery-item">
+      <img src="4.gif" alt="Image 4">
+      <div class="overlay">Mark Dizo</div>
+    </div>
+    
+    <script>
+    function explore() {
+      alert("Explore more features coming soon!");
+ 
+   // Redirect to another page after successful login
+    } window.location.href = "style.html"; // Replace with the actual URL of the page you want to open
+  </div>
+</body>
+</html>
